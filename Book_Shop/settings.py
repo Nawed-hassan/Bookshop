@@ -57,9 +57,8 @@ WSGI_APPLICATION = 'Book_Shop.wsgi.application'
 # Database configuration for Render PostgreSQL
 DATABASES = {
     'default': dj_database_url.config(
-        default='sqlite:///' + str(BASE_DIR / 'db.sqlite3'),
-        conn_max_age=600,
-        ssl_require=True
+        default=os.environ.get("DATABASE_URL"),
+        conn_max_age=600
     )
 }
 
