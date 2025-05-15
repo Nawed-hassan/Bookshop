@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - Children Book Centre{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="display-5 fw-bold">{{ content.hero_title }}</h2>
+    <p class="lead">{{ content.hero_subtitle }}</p>
+    <a href="{% url 'books' %}" class="btn btn-primary mt-3">Browse Books</a>
+  </div>
+</section>
+
+<!-- Highlights -->
+<section class="py-5">
+  <div class="container">
+    <h3 class="mb-4 text-center">Why Choose Us?</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 text-center">
+          <img src="{% static 'images/img1.jfif' %}" class="card-img-top" alt="Illustrations">
+          <div class="card-body">
+            <h5 class="card-title">Beautiful Illustrations</h5>
+            <p class="card-text">Visually engaging books that make reading fun and interactive.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 text-center">
+          <img src="{% static 'images/img2.jpg' %}" class="card-img-top" alt="Learning">
+          <div class="card-body">
+            <h5 class="card-title">Learning Made Fun</h5>
+            <p class="card-text">Books designed to develop language, thinking, and emotional skills.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 text-center">
+          <img src="{% static 'images/img3.jpg' %}" class="card-img-top" alt="Diverse Collection">
+          <div class="card-body">
+            <h5 class="card-title">Diverse Collection</h5>
+            <p class="card-text">Explore books across genres and cultures to spark young imaginations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Books -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h3 class="mb-4 text-center">Featured Books</h3>
+    <div class="row row-cols-2 row-cols-md-4 g-4">
+      {% for book in featured_books %}
+      <div class="col">
+        <div class="card h-100 text-center">
+          <img src="{% static book.image %}" class="card-img-top" alt="{{ book.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ book.title }}</h5>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

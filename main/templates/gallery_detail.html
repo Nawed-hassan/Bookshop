@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ image.title }} - Gallery{% endblock %}
+
+{% block content %}
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-3">{{ image.title }}</h2>
+    <p class="text-muted">{{ image.description }}</p>
+  </div>
+</section>
+
+<section class="py-4">
+  <div class="container text-center">
+    <img src="{{ image.image.url }}" alt="{{ image.title }}" class="img-fluid rounded shadow-lg mb-4">
+    <div>
+      <a href="{% url 'gallery' %}" class="btn btn-secondary">Back to Gallery</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
+

@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: bookshop-django
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn Book_Shop.wsgi"
+    envVars:
+      - key: DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        value: "your-secret-key"
+      - fromDatabase:
+          name: bookshop-db
+          property: connectionString
+          key: DATABASE_URL
+
+databases:
+  - name: bookshop-db
+    plan: free

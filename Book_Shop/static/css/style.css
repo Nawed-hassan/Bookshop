@@ -1,0 +1,259 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-color: #f9f6f1;
+    color: #333;
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  /* Popup */
+  .popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .popup-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .popup-content button {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background-color: #5a4b3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #5a4b3c;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .nav-links a:hover {
+    color: #5a4b3c;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: url('images/hero-bg.jpg') center/cover no-repeat;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .hero-content h2 {
+    font-size: 3rem;
+    color: #fff;
+  }
+  
+  .hero-content p {
+    color: #eee;
+    margin: 1rem 0;
+  }
+  
+  .btn {
+    background-color: #5a4b3c;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  /* Featured Books */
+  .featured {
+    padding: 4rem 0;
+  }
+  
+  .books-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .book-card {
+    background: #fff;
+    width: 220px;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .book-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .book-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  /* About Preview */
+  .about-preview {
+    background-color: #f2ebe2;
+    padding: 4rem 0;
+  }
+  
+  .about-grid {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .about-grid img {
+    width: 50%;
+    border-radius: 10px;
+  }
+  
+  .about-grid div {
+    flex: 1;
+  }
+  
+  /* Contact Preview */
+  .contact-preview {
+    background: #fff;
+    padding: 4rem 0;
+    text-align: center;
+  }
+  
+  .contact-info {
+    margin-top: 1rem;
+  }
+  
+  .contact-info p {
+    margin: 0.5rem 0;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #5a4b3c;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  /* About Page Specific */
+.about-page {
+    padding: 4rem 0;
+    background-color: #f9f6f1;
+    text-align: center;
+  }
+  
+  .about-page h1 {
+    font-size: 2.5rem;
+    color: #5a4b3c;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-page p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: #555;
+  }
+/* Books Page Specific */
+.books-page {
+    padding: 4rem 0;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .books-page h1 {
+    font-size: 2.5rem;
+    color: #5a4b3c;
+    margin-bottom: 2rem;
+  }
+  
+  .books-grid {
+    margin-top: 2rem;
+  }
+/* Gallery Page Specific */
+.gallery-page {
+    padding: 4rem 0;
+    background-color: #f2ebe2;
+    text-align: center;
+  }
+  
+  .gallery-page h1 {
+    font-size: 2.5rem;
+    color: #5a4b3c;
+    margin-bottom: 2rem;
+  }
+/* Blog Page Specific */
+.blog-page {
+    padding: 4rem 0;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .blog-page h1 {
+    font-size: 2.5rem;
+    color: #5a4b3c;
+    margin-bottom: 2rem;
+  }
+/* Contact Page Specific */
+.contact-page {
+    padding: 4rem 0;
+    background-color: #f9f6f1;
+    text-align: center;
+  }
+  
+  .contact-page h1 {
+    font-size: 2.5rem;
+    color: #5a4b3c;
+    margin-bottom: 2rem;
+  }
+          
+      
