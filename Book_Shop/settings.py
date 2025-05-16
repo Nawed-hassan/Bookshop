@@ -10,7 +10,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-+b8mt_*o_iie9^p%mi*o0
 # DEBUG setting based on environment
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['*']  # Use specific domain in production
+# Allowed hosts and CSRF trusted origins for Render
+ALLOWED_HOSTS = ['bookshop-kfga.onrender.com', 'localhost', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://bookshop-kfga.onrender.com']
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Application definition
 INSTALLED_APPS = [
@@ -26,7 +29,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add whitenoise here
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # For static file serving
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -54,7 +57,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Book_Shop.wsgi.application'
 
-# Database configuration for Render PostgreSQL
+# Database configuration (Render PostgreSQL)
 DATABASES = {
     'default': dj_database_url.config(
         default=os.environ.get("DATABASE_URL"),
@@ -91,14 +94,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # Static files
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-# Whitenoise config
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Jazzmin settings (Optional – Uncomment if customizing dashboard)
+# Jazzmin settings (optional)
 # JAZZMIN_SETTINGS = {
 #     "site_title": "Children Book Centre Admin",
 #     "site_header": "Children Book Centre Admin Panel",
